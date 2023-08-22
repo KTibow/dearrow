@@ -1,0 +1,22 @@
+:root {
+  --m3-font-display: Roboto Flex, system-ui, sans-serif;
+  --m3-font-headline: Roboto Flex, system-ui, sans-serif;
+  --m3-font-title: Roboto Flex, system-ui, sans-serif;
+  --m3-font-label: Roboto Flex, system-ui, sans-serif;
+  --m3-font-body: Roboto Flex, system-ui, sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  margin: 0;
+
+  background-color: rgb(var(--m3-scheme-background));
+  color: rgb(var(--m3-scheme-on-background));
+  box-sizing: border-box;
+}
+@media (max-width: 640px) {
+  body {
+    padding: 1rem;
+  }
+}
