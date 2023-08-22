@@ -85,7 +85,7 @@
   <div>
     <h2 class="m3-font-headline-large">{mode}</h2>
     {#if mode == "number"}
-      <input type="number" value={number} on:input={updateFromNumber} />
+      <input type="number" class="m3-font-label-large" value={number} on:input={updateFromNumber} />
     {:else if mode == "flag"}
       {@const band1 = Math.floor(number / Math.pow(16, 12)) % Math.pow(16, 6)}
       {@const band2 = Math.floor(number / Math.pow(16, 6)) % Math.pow(16, 6)}
@@ -98,12 +98,20 @@
       <div class="loader">
         <p style="margin-bottom: 0.5rem">Load code from flag</p>
         <div class="row">
-          <input type="text" bind:this={flagInput} placeholder="concatenated hex codes" />
+          <input
+            class="m3-font-label-large"
+            bind:this={flagInput}
+            placeholder="concatenated hex codes"
+          />
           <button on:click={updateFromFlag}>→</button>
         </div>
       </div>
     {:else if mode == "unicode"}
-      <input type="text" value={numberToUnicode(number)} on:input={updateFromUnicode} />
+      <input
+        class="m3-font-label-large"
+        value={numberToUnicode(number)}
+        on:input={updateFromUnicode}
+      />
       <p style="margin-top: 1rem">
         tip: if you paste a message made up of other things than the unicode, we'll extract the
         unicode out
@@ -112,7 +120,7 @@
   </div>
   <div>
     <h2 class="m3-font-headline-large">code</h2>
-    <input type="text" bind:value={code} on:input={updateFromCode} />
+    <input type="text" class="m3-font-label-large" bind:value={code} on:input={updateFromCode} />
   </div>
 </div>
 
